@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Terrenos en Venta — Riviera Maya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --ocean-deep:#0B4F6C;
+    --turquoise:#12A5A0;
+    --sand:#F4ECD8;
+    --jade:#1F5C4E;
+    --coral:#E96B4F;
+    --ink:#0E2A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background:#d8dcdb;
+    font-family:'Work Sans', sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:32px 0;
+  }
+
+  .flyer{
+    width:1080px;
+    min-height:1350px;
+    background:var(--sand);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,0.25);
+    color:var(--ink);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg,#0B4F6C 0%, #0E6E7C 55%, #12A5A0 100%);
+    padding:64px 72px 110px;
+    position:relative;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:.28em;
+    font-size:15px;
+    color:#CFEFE8;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+
+  .eyebrow::before{ content:"◆ "; color:var(--coral); }
+
+  h1{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:118px;
+    line-height:0.92;
+    color:#FFFFFF;
+    letter-spacing:.01em;
+    text-shadow:0 6px 24px rgba(0,0,0,0.15);
+  }
+
+  .subhead{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:34px;
+    color:#DFF6F1;
+    margin-top:6px;
+  }
+
+  .wave{
+    position:absolute;
+    bottom:-2px; left:0; width:100%; line-height:0;
+  }
+
+  /* ---------- PRICE BAND ---------- */
+  .price-band{
+    background:var(--sand);
+    padding:48px 72px 8px;
+    display:flex;
+    align-items:flex-end;
+    gap:36px;
+  }
+
+  .price-main .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:16px;
+    letter-spacing:.14em;
+    color:var(--jade);
+    text-transform:uppercase;
+  }
+
+  .price-main .amount{
+    font-family:'Anton', sans-serif;
+    font-size:96px;
+    color:var(--jade);
+    line-height:1;
+  }
+
+  .price-main .amount span{ font-size:44px; vertical-align:8px; }
+
+  .price-sub{
+    font-family:'Work Sans', sans-serif;
+    font-size:20px;
+    color:var(--ink);
+    padding-bottom:14px;
+  }
+
+  .price-sub b{ color:var(--coral); }
+
+  .lot-chip{
+    margin-left:auto;
+    background:var(--ocean-deep);
+    color:#fff;
+    border-radius:999px;
+    padding:16px 30px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:.03em;
+    white-space:nowrap;
+    margin-bottom:10px;
+  }
+
+  /* ---------- BENEFITS ---------- */
+  .benefits{
+    padding:44px 72px 8px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 32px;
+  }
+
+  .benefit{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:#FFFFFF;
+    border:1px solid rgba(15,90,80,0.12);
+    border-radius:14px;
+    padding:20px 22px;
+  }
+
+  .benefit svg{ flex:none; }
+
+  .benefit span{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    color:var(--ink);
+    line-height:1.15;
+  }
+
+  /* ---------- ENGANCHE CALLOUT ---------- */
+  .enganche{
+    margin:40px 72px 0;
+    background:var(--coral);
+    border-radius:16px;
+    padding:26px 36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .enganche .txt{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:28px;
+    color:#fff;
+  }
+
+  .enganche .pct{
+    font-family:'Anton', sans-serif;
+    font-size:44px;
+    color:#fff;
+  }
+
+  /* ---------- DIVIDER ---------- */
+  .divider{
+    margin:52px 72px 0;
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .divider .line{ flex:1; height:1px; background:rgba(14,42,46,0.2); }
+  .divider .key{ opacity:.85; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-title{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:.24em;
+    font-size:17px;
+    color:var(--jade);
+    margin:22px 0 26px;
+  }
+
+  .contacts{
+    padding:0 72px 64px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+
+  .contact-card{
+    background:var(--ocean-deep);
+    border-radius:18px;
+    padding:30px 28px;
+    color:#fff;
+    position:relative;
+  }
+
+  .contact-card .city{
+    font-family:'Anton', sans-serif;
+    font-size:30px;
+    letter-spacing:.02em;
+    color:#9FE6DD;
+    margin-bottom:10px;
+  }
+
+  .contact-card .name{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:21px;
+    margin-bottom:6px;
+  }
+
+  .contact-card .phone{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:26px;
+    letter-spacing:.03em;
+    color:#fff;
+  }
+
+  .footer-note{
+    text-align:center;
+    font-family:'Work Sans', sans-serif;
+    font-size:14px;
+    color:rgba(14,42,46,0.55);
+    padding-bottom:36px;
+  }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+
+  <div class="hero">
+    <div class="eyebrow">Riviera Maya · Quintana Roo</div>
+    <h1>TERRENOS<br>EN VENTA</h1>
+    <div class="subhead">Tu llave a la Riviera Maya</div>
+
+    <svg class="wave" viewBox="0 0 1080 90" preserveAspectRatio="none" width="1080" height="90">
+      <path d="M0,40 C220,90 400,0 620,35 C840,70 960,10 1080,45 L1080,90 L0,90 Z" fill="#F4ECD8"/>
+    </svg>
+  </div>
+
+  <div class="price-band">
+    <div class="price-main">
+      <div class="label">Precio desde</div>
+      <div class="amount"><span>$</span>250,000<span> MXN</span></div>
+    </div>
+    <div class="price-sub">Lotes de hasta <b>$700,000 MXN</b><br>según ubicación y tamaño</div>
+    <div class="lot-chip">LOTES DE 700 M²</div>
+  </div>
+
+  <div class="benefits">
+    <div class="benefit">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#12A5A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Entrega inmediata</span>
+    </div>
+    <div class="benefit">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#12A5A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Facilidades de pago</span>
+    </div>
+    <div class="benefit">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#12A5A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Escrituración incluida</span>
+    </div>
+    <div class="benefit">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#12A5A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Excelente ubicación</span>
+    </div>
+  </div>
+
+  <div class="enganche">
+    <div class="txt">Enganches desde el</div>
+    <div class="pct">30%</div>
+  </div>
+
+  <div class="divider">
+    <div class="line"></div>
+    <svg class="key" width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <circle cx="7" cy="12" r="4" stroke="#1F5C4E" stroke-width="2"/>
+      <path d="M11 12h11M18 12v4M21 12v3" stroke="#1F5C4E" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="line"></div>
+  </div>
+
+  <div class="contact-title">MÁS INFORMACIÓN</div>
+
+  <div class="contacts">
+    <div class="contact-card">
+      <div class="city">CDMX</div>
+      <div class="name">Sra. Miriam Aguirre Álvarez</div>
+      <div class="phone">56 2164 5777</div>
+    </div>
+    <div class="contact-card">
+      <div class="city">Playa del Carmen</div>
+      <div class="name">Sr. Horacio Muñoz Ramírez</div>
+      <div class="phone">998 268 3967</div>
+    </div>
+  </div>
+
+  <div class="footer-note">Precios sujetos a cambio sin previo aviso · Consulta disponibilidad de lotes</div>
+
+</div>
+
+</body>
+</html>
