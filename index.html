@@ -152,12 +152,6 @@
 
   /* ---------- HERO ART ---------- */
   .hero-art{
-    .hero-photo{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
     position:relative;
     border-radius:var(--radius-lg);
     overflow:hidden;
@@ -326,6 +320,104 @@
     position:absolute; right:0; top:0; height:100%; opacity:.5;
   }
 
+  /* ---------- LISTINGS GRID ---------- */
+  .listings-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(19px,3vw,24px);
+    margin:clamp(40px,6vw,56px) clamp(20px,5vw,56px) 6px;
+  }
+  .listings-sub{
+    font-size:14px;
+    color:var(--grey);
+    margin:0 clamp(20px,5vw,56px) 20px;
+  }
+
+  .listings-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:clamp(16px,2.5vw,24px);
+    padding:0 clamp(20px,5vw,56px) clamp(12px,3vw,20px);
+  }
+
+  @media (max-width:860px){
+    .listings-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:560px){
+    .listings-grid{ grid-template-columns:1fr; }
+  }
+
+  .listing-item{
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    border:1px solid var(--grey-light);
+    transition:box-shadow .2s ease;
+  }
+  .listing-item:hover{ box-shadow:var(--shadow-hover); }
+
+  .listing-photo{
+    position:relative;
+    aspect-ratio:4/3;
+    background:var(--offwhite);
+  }
+  .listing-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .listing-photo .badge{
+    position:absolute;
+    top:10px; left:10px;
+    background:var(--white);
+    font-size:11px;
+    font-weight:700;
+    color:var(--ink);
+    padding:5px 10px;
+    border-radius:999px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  }
+  .listing-photo .heart{
+    position:absolute;
+    top:10px; right:10px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .listing-photo .heart svg{ width:15px; height:15px; }
+
+  .listing-item-body{
+    padding:14px 16px 18px;
+  }
+  .listing-item-body .loc{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+  }
+  .listing-item-body .loc .size{
+    color:var(--grey);
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .listing-item-body .desc{
+    font-size:13px;
+    color:var(--grey);
+    margin-top:2px;
+  }
+  .listing-item-body .price{
+    margin-top:10px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .listing-item-body .price span{
+    font-weight:500;
+    color:var(--grey);
+  }
+
   /* ---------- HOSTS ---------- */
   .hosts-title{
     text-align:left;
@@ -415,7 +507,7 @@
 <div class="page">
 
   <div class="nav">
-    <div class="brand"><span class="dot"></span>Terrenos HM.</div>
+    <div class="brand"><span class="dot"></span>Riviera Land Co.</div>
     <div class="tag">Quintana Roo, México</div>
   </div>
 
@@ -444,7 +536,32 @@
     </div>
 
     <div class="hero-art">
-      <img src="img/playa.jpg" alt="Terreno frente al mar, Riviera Maya" class="hero-photo">
+      <svg viewBox="0 0 480 410" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="480" height="410" fill="#DFF3E9"/>
+        <rect width="480" height="230" fill="#BFE8E5"/>
+        <circle cx="390" cy="70" r="46" fill="#FFE39A"/>
+        <path d="M0 190 Q120 150 240 185 T480 175 V230 H0 Z" fill="#12A5A0" opacity="0.55"/>
+        <path d="M0 210 Q130 180 260 205 T480 200 V230 H0 Z" fill="#0B4F6C" opacity="0.35"/>
+        <rect x="60" y="230" width="360" height="150" fill="#F4ECD8"/>
+        <g stroke="#1F5C4E" stroke-width="2" stroke-dasharray="6 6" fill="none">
+          <rect x="140" y="255" width="200" height="105" rx="4"/>
+        </g>
+        <text x="240" y="315" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="16" fill="#1F5C4E">700 m²</text>
+        <g transform="translate(90,300)">
+          <path d="M0 60 C0 30 8 10 8 -10 C8 10 16 30 16 60 Z" fill="#1F5C4E"/>
+          <path d="M8 -10 C-6 -6 -18 6 -22 18 C-8 14 2 6 8 -2Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C22 -6 34 6 38 18 C24 14 14 6 8 -2Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C-2 -18 -10 -30 -10 -42 C0 -34 8 -22 8 -10Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C18 -18 26 -30 26 -42 C16 -34 8 -22 8 -10Z" fill="#2E7D5B"/>
+        </g>
+        <g transform="translate(365,300)">
+          <path d="M0 60 C0 30 8 10 8 -10 C8 10 16 30 16 60 Z" fill="#1F5C4E"/>
+          <path d="M8 -10 C-6 -6 -18 6 -22 18 C-8 14 2 6 8 -2Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C22 -6 34 6 38 18 C24 14 14 6 8 -2Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C-2 -18 -10 -30 -10 -42 C0 -34 8 -22 8 -10Z" fill="#2E7D5B"/>
+          <path d="M8 -10 C18 -18 26 -30 26 -42 C16 -34 8 -22 8 -10Z" fill="#2E7D5B"/>
+        </g>
+      </svg>
       <div class="save-pill">
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg>
       </div>
@@ -506,6 +623,91 @@
       <div class="t1">Riviera Maya, Quintana Roo</div>
       <div class="t2">Zona en crecimiento, cerca de playas y desarrollos turísticos</div>
     </div>
+  </div>
+
+  <div class="listings-title">Terrenos disponibles</div>
+  <div class="listings-sub">Selección de lotes listos para escriturar en distintas ubicaciones de la Riviera Maya</div>
+
+  <div class="listings-grid">
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-1.jpg" alt="Terreno en Tulum, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Tulum <span class="size">700 m²</span></div>
+        <div class="desc">A 10 min de la zona hotelera</div>
+        <div class="price">$250,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-2.jpg" alt="Terreno en Playa del Carmen, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Playa del Carmen <span class="size">700 m²</span></div>
+        <div class="desc">Cerca de la Quinta Avenida</div>
+        <div class="price">$380,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-3.jpg" alt="Terreno en Puerto Aventuras, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Puerto Aventuras <span class="size">700 m²</span></div>
+        <div class="desc">Vista a zona de marina</div>
+        <div class="price">$420,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-4.jpg" alt="Terreno en Akumal, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Akumal <span class="size">700 m²</span></div>
+        <div class="desc">A pasos de la playa</div>
+        <div class="price">$500,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-5.jpg" alt="Terreno en Bacalar, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Bacalar <span class="size">700 m²</span></div>
+        <div class="desc">Vista a la Laguna de los Siete Colores</div>
+        <div class="price">$300,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-6.jpg" alt="Terreno en Mahahual, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Mahahual <span class="size">700 m²</span></div>
+        <div class="desc">Frente al Caribe mexicano</div>
+        <div class="price">$700,000 <span>MXN</span></div>
+      </div>
+    </div>
+
   </div>
 
   <div class="hosts-title">Más información</div>
