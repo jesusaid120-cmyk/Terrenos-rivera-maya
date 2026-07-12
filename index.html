@@ -322,6 +322,78 @@
   .amenity .txt{ font-size:15px; font-weight:500; color:var(--ink); }
 
   /* ---------- MAP STRIP ---------- */
+  .price-tiers{
+    margin-top:26px;
+    padding-top:24px;
+    border-top:1px solid var(--grey-light);
+  }
+  .price-tiers-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(15px,2.4vw,18px);
+    margin-bottom:14px;
+  }
+  .tier-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 0;
+    border-bottom:1px solid var(--grey-light);
+  }
+  .tier-row:last-child{ border-bottom:none; padding-bottom:0; }
+
+  .tier-size{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .tier-size .ico{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:var(--offwhite);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .tier-size .ico svg{ width:18px; height:18px; color:var(--turquoise); }
+  .tier-size .m2{
+    font-weight:600;
+    font-size:clamp(14px,2.2vw,16px);
+    color:var(--ink);
+  }
+  .tier-size .use{
+    font-size:12px;
+    color:var(--grey);
+    margin-top:1px;
+  }
+
+  .tier-price{
+    text-align:right;
+    white-space:nowrap;
+  }
+  .tier-price .amt{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(15px,2.4vw,18px);
+    color:var(--ink);
+  }
+  .tier-price .lbl{
+    font-size:11px;
+    color:var(--grey);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .tier-price .tag{
+    display:inline-block;
+    background:var(--sand);
+    color:var(--coral-dark);
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-top:2px;
+  }
+
   .map-strip{
     margin:clamp(28px,4vw,40px) clamp(20px,5vw,56px) 0;
     background:var(--ocean);
@@ -558,7 +630,7 @@
         Riviera Maya · Quintana Roo
       </div>
       <h1>Terrenos<br>en <em>venta</em></h1>
-      <p class="hero-sub">La mejor inversión sigue siendo la tierra, aprovecha las oportunidades disponibles hoy y asegura tu patrimonio para el mañana.</p>
+      <p class="hero-sub">Tu llave a la Riviera Maya. Lotes listos para escriturar, a minutos de la costa, con entrega inmediata.</p>
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="n">700 m²</div>
@@ -628,8 +700,8 @@
       <div class="listing-top">
         <div>
           <div class="listing-label">Precio desde</div>
-          <div class="listing-price"><span class="cur">$</span>250,000<span class="per">MXN</span></div>
-          <div class="listing-sub">Lotes de hasta <b>$700,000 MXN</b> según ubicación y tamaño</div>
+          <div class="listing-price"><span class="cur">$</span>300,000<span class="per">MXN</span></div>
+          <div class="listing-sub">Lotes de <b>700 m²</b> a <b>10,000 m²</b> · opciones para uso residencial y para desarrolladores</div>
         </div>
         <div class="enganche-chip">
           <div class="pct">30%</div>
@@ -653,6 +725,64 @@
         <div class="amenity">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="txt">Excelente ubicación</div>
+        </div>
+      </div>
+
+      <div class="price-tiers">
+        <div class="price-tiers-title">Precios por tamaño de lote</div>
+
+        <div class="tier-row">
+          <div class="tier-size">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div>
+              <div class="m2">700 m²</div>
+              <div class="use">Uso residencial</div>
+            </div>
+          </div>
+          <div class="tier-price">
+            <div class="amt">$300,000 <span style="font-weight:500;color:var(--grey);font-size:0.7em;">MXN</span></div>
+            <div class="lbl">Desde</div>
+          </div>
+        </div>
+
+        <div class="tier-row">
+          <div class="tier-size">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div>
+              <div class="m2">1,000 m²</div>
+              <div class="use">Uso residencial ampliado</div>
+            </div>
+          </div>
+          <div class="tier-price">
+            <div class="amt">$400,000 <span style="font-weight:500;color:var(--grey);font-size:0.7em;">MXN</span></div>
+            <div class="lbl">Desde</div>
+          </div>
+        </div>
+
+        <div class="tier-row">
+          <div class="tier-size">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div>
+              <div class="m2">5,000 m²</div>
+              <div class="use">Para desarrolladores e inversionistas</div>
+            </div>
+          </div>
+          <div class="tier-price">
+            <div class="tag">Cotización personalizada</div>
+          </div>
+        </div>
+
+        <div class="tier-row">
+          <div class="tier-size">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V6l8-3 8 3v15M9 21v-8h6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div>
+              <div class="m2">10,000 m²</div>
+              <div class="use">Proyectos de gran escala</div>
+            </div>
+          </div>
+          <div class="tier-price">
+            <div class="tag">Cotización personalizada</div>
+          </div>
         </div>
       </div>
     </div>
