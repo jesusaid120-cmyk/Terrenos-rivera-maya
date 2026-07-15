@@ -568,6 +568,77 @@ a {
   opacity: .5;
 }
 
+/* ---------- INFO SECTION ---------- */
+.info-section {
+  padding: clamp(24px, 4vw, 40px);
+  margin: clamp(24px, 4vw, 40px) clamp(20px, 5vw, 56px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,247,247,0.95));
+  border: 1px solid var(--grey-light);
+}
+
+.info-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.6vw, 22px);
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.info-lead {
+  color: var(--grey);
+  margin-bottom: 16px;
+  max-width: 72ch;
+  line-height: 1.45;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.info-card {
+  background: var(--white);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--grey-light);
+}
+
+.info-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.info-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: var(--ink);
+}
+
+.info-list li {
+  margin-bottom: 8px;
+  color: var(--grey);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- LISTINGS GRID ---------- */
 .listings-title {
   font-family: 'Poppins', sans-serif;
@@ -827,6 +898,7 @@ a {
 
 @media (max-width: 600px) {
   .contact-form {
+    font-family: 'Poppins', sans-serif;
     grid-template-columns: 1fr;
   }
 }
@@ -996,11 +1068,4 @@ a {
 .result-item .label {
   font-size: 14px;
   opacity: 0.9;
-}
-
-.result-item .value {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--oro-brillante);
 }
