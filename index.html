@@ -468,6 +468,22 @@
 
   .video-section.no-video video{ display:none; }
 
+  .video-play-btn{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    width:64px; height:64px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.45);
+    border:2px solid rgba(255,255,255,0.8);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    backdrop-filter:blur(2px);
+  }
+  .video-play-btn svg{ width:24px; height:24px; margin-left:3px; }
+  .video-play-btn:hover{ background:rgba(0,0,0,0.6); }
+
   .video-section video{
     position:absolute;
     inset:0;
@@ -1087,10 +1103,13 @@
 
   <div class="video-section">
     <div class="video-badge">Video · Ubicación</div>
-    <video autoplay muted loop playsinline poster="img/video-poster.jpg" onerror="this.closest('.video-section').classList.add('no-video')">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/video-poster.jpg" onerror="this.closest('.video-section').classList.add('no-video')">
       <source src="video/ubicacion-riviera-maya.webm" type="video/webm">
       <source src="video/ubicacion-riviera-maya.mp4" type="video/mp4">
     </video>
+    <button id="videoPlayBtn" class="video-play-btn" type="button" aria-label="Reproducir video" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5Z" fill="#fff"/></svg>
+    </button>
     <div class="video-overlay">
       <div class="video-text">
         <h3>Estamos ubicados a 5 min del Tren Maya y a 5 min del mar Caribe: un lugar exótico lleno de cenotes para quienes desean un patrimonio en una excelente ubicación.</h3>
@@ -1245,6 +1264,29 @@
     usable[idx].classList.add('active');
     if(dots[idx]) dots[idx].classList.add('active');
   }, 4000);
+})();
+
+(function(){
+  const video = document.getElementById('heroVideo');
+  const playBtn = document.getElementById('videoPlayBtn');
+  if(!video || !playBtn) return;
+
+  function showPlayButton(){
+    playBtn.style.display = 'flex';
+  }
+
+  const playPromise = video.play();
+  if(playPromise !== undefined){
+    playPromise.catch(showPlayButton);
+  }
+
+  playBtn.addEventListener('click', function(){
+    video.play().then(() => { playBtn.style.display = 'none'; }).catch(showPlayButton);
+  });
+
+  video.addEventListener('play', function(){
+    playBtn.style.display = 'none';
+  });
 })();
 </script>
 </body>
