@@ -394,6 +394,46 @@
     margin-top:2px;
   }
 
+  .info-legal{
+    margin:clamp(28px,4vw,40px) clamp(20px,5vw,56px) 0;
+    background:var(--sand);
+    border:1px solid rgba(196,164,92,0.35);
+    border-radius:var(--radius-lg);
+    padding:clamp(22px,4vw,32px);
+  }
+  .info-legal-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(17px,2.6vw,21px);
+    color:var(--ink);
+    margin-bottom:16px;
+  }
+  .info-legal-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .info-legal-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .info-legal-item .check{
+    width:24px; height:24px;
+    border-radius:50%;
+    background:var(--turquoise);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+    margin-top:1px;
+  }
+  .info-legal-item .check svg{ width:13px; height:13px; }
+  .info-legal-item p{
+    font-size:clamp(14px,2vw,15.5px);
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .info-legal-item p b{ font-weight:700; }
+
   .map-strip{
     margin:clamp(28px,4vw,40px) clamp(20px,5vw,56px) 0;
     background:var(--ocean);
@@ -788,6 +828,24 @@
     </div>
   </div>
 
+  <div class="info-legal">
+    <div class="info-legal-title">Lo importante que debes saber</div>
+    <div class="info-legal-list">
+      <div class="info-legal-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p>Es un <b>Terreno Nacional en proceso de titulación</b>. No es ejido.</p>
+      </div>
+      <div class="info-legal-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p>Tiempo estimado para obtener el <b>Título de Propiedad a tu nombre: 9 a 18 meses</b>.</p>
+      </div>
+      <div class="info-legal-item">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p>La operación se formaliza mediante <b>Contrato de Cesión de Derechos</b>, garantizando la transmisión legal de los derechos del inmueble al concluir el proceso de titulación.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="map-strip">
     <svg class="pin" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.6" fill="currentColor"/></svg>
     <div>
@@ -913,4 +971,3 @@
 
 </body>
 </html>
-
