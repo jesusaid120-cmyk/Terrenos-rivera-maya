@@ -72,3 +72,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Fallback para anclas: asegura que #info haga scroll aunque el navegador no lo haga automáticamente
+document.addEventListener('DOMContentLoaded', function () {
+  // Si la URL ya contiene #info al cargar la página
+  if (location.hash === '#info') {
+    const target = document.getElementById('info');
+    if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 60);
+  }
+
+  // Refuerzo para enlaces internos: evita comportamiento por defecto y usa scrollIntoView + actualizar history
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const sel = this.getAttribute('href');
+      const tgt = document.querySelector(sel);
+      if (tgt) {
+        e.preventDefault();
+        tgt.scrollIntoView({ behavior: 'smooth' });
+        try { history.pushState(null, '', sel); } catch (err) {}
+      }
+    });
+  });
+});
