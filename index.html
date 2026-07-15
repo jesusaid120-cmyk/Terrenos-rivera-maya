@@ -3,17 +3,597 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terrenos en Venta — Riviera Maya, Quintana Roo</title>
-<meta name="description" content="Terrenos en venta en Riviera Maya, Quintana Roo. Lotes desde $300,000 MXN con entrega inmediata, facilidades de pago y escrituración incluida. Invierte en la mejo[...]">
-<meta name="keywords" content="terrenos en venta, riviera maya, quintana roo, lotes, inversión inmobiliaria, tulum, playa del carmen">
-<meta name="author" content="HM Venta de Terrenos">
-<meta property="og:title" content="Terrenos en Venta - Riviera Maya">
-<meta property="og:description" content="Descubre terrenos de lujo en Riviera Maya. Lotes desde $300,000 MXN con facilidades de pago.">
-<meta property="og:image" content="img/playa-hero.jpg">
-<meta property="og:url" content="https://jesusaid120-cmyk.github.io/Terrenos-rivera-maya/">
-<meta name="theme-color" content="#0B4F6C">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230B4F6C'/%3E%3Ctext x='50' y='58' font-size='30' text-anchor='middle' fill='white' font-family='Poppins, sans-serif'%3EHM%3C/text%3E%3C/svg%3E">
+<title>Terrenos en Venta — Riviera Maya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Cinzel:wght@600;700&display=swap');
+
+  :root{
+    --coral:#FF385C;
+    --coral-dark:#D9204A;
+    --ocean:#0B4F6C;
+    --turquoise:#12A5A0;
+    --ink:#222222;
+    --grey:#6B7280;
+    --grey-light:#E5E7EB;
+    --offwhite:#F7F7F7;
+    --sand:#FFF8F0;
+    --white:#FFFFFF;
+    --oro-principal:#c4a45c;
+    --oro-brillante:#e5c77b;
+    --azul-oscuro:#0f2537;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --shadow-card:0 6px 20px rgba(15,42,46,0.08);
+    --shadow-hover:0 10px 28px rgba(15,42,46,0.14);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ -webkit-text-size-adjust:100%; }
+
+  html,body{
+    background:#E9EBEA;
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+  }
+
+  body{ width:100%; }
+
+  .page{
+    width:100%;
+    max-width:1100px;
+    background:var(--white);
+    box-shadow:0 30px 60px rgba(0,0,0,0.18);
+  }
+
+  @media (max-width:640px){
+    .page{ box-shadow:none; }
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:clamp(18px,3vw,26px) clamp(20px,5vw,56px);
+    border-bottom:1px solid var(--grey-light);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand .logo-emblem{
+    width:clamp(30px,4.5vw,38px);
+    height:clamp(30px,4.5vw,38px);
+    flex:none;
+  }
+  .brand .logo-text{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:clamp(13px,2vw,16px);
+    color:var(--azul-oscuro);
+    letter-spacing:.02em;
+    line-height:1.15;
+  }
+  .brand .logo-text .hl{
+    color:var(--oro-principal);
+    font-size:1.15em;
+  }
+  .nav .tag{
+    font-size:clamp(11px,1.8vw,13px);
+    color:var(--grey);
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    gap:clamp(20px,3vw,40px);
+    align-items:center;
+    padding:clamp(28px,5vw,56px) clamp(20px,5vw,56px);
+  }
+
+  @media (max-width:780px){
+    .hero{ grid-template-columns:1fr; }
+  }
+
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--sand);
+    color:var(--coral-dark);
+    font-weight:600;
+    font-size:clamp(12px,2vw,14px);
+    padding:7px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero-eyebrow svg{ width:14px; height:14px; flex:none; }
+
+  .hero h1{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:clamp(34px,5.4vw,54px);
+    line-height:1.04;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+  }
+
+  .hero h1 em{
+    font-style:normal;
+    color:var(--turquoise);
+  }
+
+  .hero-sub{
+    margin-top:14px;
+    font-size:clamp(15px,2.2vw,18px);
+    color:var(--grey);
+    max-width:46ch;
+    line-height:1.5;
+  }
+
+  .hero-stats{
+    display:flex;
+    gap:clamp(20px,3vw,36px);
+    margin-top:26px;
+  }
+  .hero-stat .n{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(20px,3vw,26px);
+    color:var(--ink);
+  }
+  .hero-stat .l{
+    font-size:12px;
+    color:var(--grey);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-top:2px;
+  }
+
+  /* ---------- HERO ART ---------- */
+  .hero-art{
+    position:relative;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:4/3.4;
+    box-shadow:var(--shadow-card);
+  }
+
+  .hero-art svg{ width:100%; height:100%; display:block; }
+
+  .hero-photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+  }
+
+  .float-badge{
+    position:absolute;
+    left:16px; bottom:16px;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:12px 16px;
+    box-shadow:var(--shadow-hover);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    z-index:2;
+  }
+  .float-badge .ico{
+    width:34px; height:34px;
+    border-radius:50%;
+    background:var(--sand);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .float-badge .ico svg{ width:18px; height:18px; }
+  .float-badge .t1{ font-size:11px; color:var(--grey); text-transform:uppercase; letter-spacing:.05em; }
+  .float-badge .t2{ font-family:'Poppins',sans-serif; font-weight:700; font-size:14px; color:var(--ink); }
+
+  .save-pill{
+    position:absolute;
+    top:14px; right:14px;
+    background:rgba(255,255,255,0.92);
+    width:38px; height:38px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    z-index:2;
+  }
+  .save-pill svg{ width:18px; height:18px; }
+
+  /* ---------- FILTER PILLS ---------- */
+  .pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:0 clamp(20px,5vw,56px) clamp(28px,4vw,40px);
+  }
+  .pill{
+    display:flex; align-items:center; gap:8px;
+    border:1px solid var(--grey-light);
+    border-radius:999px;
+    padding:9px 16px;
+    font-size:clamp(13px,1.8vw,14px);
+    font-weight:500;
+    color:var(--ink);
+  }
+  .pill svg{ width:16px; height:16px; flex:none; color:var(--turquoise); }
+
+  /* ---------- LISTING CARD ---------- */
+  .listing-wrap{
+    padding:0 clamp(20px,5vw,56px) clamp(36px,5vw,52px);
+  }
+
+  .listing-card{
+    border:1px solid var(--grey-light);
+    border-radius:var(--radius-lg);
+    padding:clamp(22px,4vw,36px);
+    box-shadow:var(--shadow-card);
+  }
+
+  .listing-top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:16px;
+    padding-bottom:22px;
+    border-bottom:1px solid var(--grey-light);
+  }
+
+  .listing-label{
+    font-size:13px;
+    color:var(--grey);
+    font-weight:500;
+    margin-bottom:4px;
+  }
+
+  .listing-price{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:clamp(36px,6vw,52px);
+    color:var(--ink);
+    line-height:1;
+  }
+  .listing-price .cur{ font-size:0.5em; vertical-align:12%; color:var(--grey); }
+  .listing-price .per{ font-size:0.36em; font-weight:600; color:var(--grey); margin-left:6px; }
+
+  .listing-sub{
+    font-size:14px;
+    color:var(--grey);
+    margin-top:6px;
+  }
+  .listing-sub b{ color:var(--ink); font-weight:600; }
+
+  .enganche-chip{
+    background:var(--ink);
+    color:var(--white);
+    border-radius:var(--radius-md);
+    padding:14px 20px;
+    text-align:center;
+    min-width:150px;
+  }
+  .enganche-chip .pct{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:28px;
+    color:#FFC8D3;
+  }
+  .enganche-chip .lbl{ font-size:12px; color:#D9D9D9; margin-top:2px; }
+
+  .amenities{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 28px;
+    padding-top:24px;
+  }
+
+  @media (max-width:520px){
+    .amenities{ grid-template-columns:1fr; }
+  }
+
+  .amenity{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .amenity .ico{
+    width:40px; height:40px;
+    border-radius:50%;
+    background:var(--offwhite);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .amenity .ico svg{ width:20px; height:20px; color:var(--turquoise); }
+  .amenity .txt{ font-size:15px; font-weight:500; color:var(--ink); }
+
+  /* ---------- MAP STRIP ---------- */
+  .price-tiers{
+    margin-top:26px;
+    padding-top:24px;
+    border-top:1px solid var(--grey-light);
+  }
+  .price-tiers-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(15px,2.4vw,18px);
+    margin-bottom:14px;
+  }
+  .tier-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 0;
+    border-bottom:1px solid var(--grey-light);
+  }
+  .tier-row:last-child{ border-bottom:none; padding-bottom:0; }
+
+  .tier-size{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .tier-size .ico{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:var(--offwhite);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .tier-size .ico svg{ width:18px; height:18px; color:var(--turquoise); }
+  .tier-size .m2{
+    font-weight:600;
+    font-size:clamp(14px,2.2vw,16px);
+    color:var(--ink);
+  }
+  .tier-size .use{
+    font-size:12px;
+    color:var(--grey);
+    margin-top:1px;
+  }
+
+  .tier-price{
+    text-align:right;
+    white-space:nowrap;
+  }
+  .tier-price .amt{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(15px,2.4vw,18px);
+    color:var(--ink);
+  }
+  .tier-price .lbl{
+    font-size:11px;
+    color:var(--grey);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .tier-price .tag{
+    display:inline-block;
+    background:var(--sand);
+    color:var(--coral-dark);
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-top:2px;
+  }
+
+  .map-strip{
+    margin:clamp(28px,4vw,40px) clamp(20px,5vw,56px) 0;
+    background:var(--ocean);
+    border-radius:var(--radius-lg);
+    padding:clamp(22px,4vw,32px) clamp(22px,4vw,32px);
+    display:flex;
+    align-items:center;
+    gap:22px;
+    color:var(--white);
+    overflow:hidden;
+    position:relative;
+  }
+  .map-strip svg.pin{ width:34px; height:34px; flex:none; color:var(--coral); }
+  .map-strip .t1{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(17px,2.6vw,21px); }
+  .map-strip .t2{ font-size:13px; color:#B9DDE0; margin-top:2px; }
+  .map-strip .waves-deco{
+    position:absolute; right:0; top:0; height:100%; opacity:.5;
+  }
+
+  /* ---------- LISTINGS GRID ---------- */
+  .listings-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(19px,3vw,24px);
+    margin:clamp(40px,6vw,56px) clamp(20px,5vw,56px) 6px;
+  }
+  .listings-sub{
+    font-size:14px;
+    color:var(--grey);
+    margin:0 clamp(20px,5vw,56px) 20px;
+  }
+
+  .listings-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:clamp(16px,2.5vw,24px);
+    padding:0 clamp(20px,5vw,56px) clamp(12px,3vw,20px);
+  }
+
+  @media (max-width:860px){
+    .listings-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:560px){
+    .listings-grid{ grid-template-columns:1fr; }
+  }
+
+  .listing-item{
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    border:1px solid var(--grey-light);
+    transition:box-shadow .2s ease;
+  }
+  .listing-item:hover{ box-shadow:var(--shadow-hover); }
+
+  .listing-photo{
+    position:relative;
+    aspect-ratio:4/3;
+    background:var(--offwhite);
+  }
+  .listing-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .listing-photo .badge{
+    position:absolute;
+    top:10px; left:10px;
+    background:var(--white);
+    font-size:11px;
+    font-weight:700;
+    color:var(--ink);
+    padding:5px 10px;
+    border-radius:999px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  }
+  .listing-photo .heart{
+    position:absolute;
+    top:10px; right:10px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .listing-photo .heart svg{ width:15px; height:15px; }
+
+  .listing-item-body{
+    padding:14px 16px 18px;
+  }
+  .listing-item-body .loc{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+  }
+  .listing-item-body .loc .size{
+    color:var(--grey);
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .listing-item-body .desc{
+    font-size:13px;
+    color:var(--grey);
+    margin-top:2px;
+  }
+  .listing-item-body .price{
+    margin-top:10px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .listing-item-body .price span{
+    font-weight:500;
+    color:var(--grey);
+  }
+
+  /* ---------- HOSTS ---------- */
+  .hosts-title{
+    text-align:left;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(19px,3vw,24px);
+    margin:clamp(36px,5vw,48px) clamp(20px,5vw,56px) 18px;
+  }
+
+  .hosts{
+    padding:0 clamp(20px,5vw,56px) clamp(20px,4vw,32px);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(14px,3vw,22px);
+  }
+
+  @media (max-width:600px){
+    .hosts{ grid-template-columns:1fr; }
+  }
+
+  .host-card{
+    border:1px solid var(--grey-light);
+    border-radius:var(--radius-md);
+    padding:clamp(18px,3vw,24px);
+    display:flex;
+    align-items:center;
+    gap:16px;
+    transition:box-shadow .2s ease;
+  }
+  .host-card:hover{ box-shadow:var(--shadow-card); }
+
+  .avatar{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--turquoise), var(--ocean));
+    color:#fff;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+
+  .host-info .city{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--coral-dark);
+    margin-bottom:3px;
+  }
+  .host-info .name{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .host-info .phone-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:var(--ink);
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  .host-info .phone-btn svg{ width:14px; height:14px; }
+  .host-info .phone-btn:hover{ background:var(--coral); }
+
+  /* ---------- FOOTER ---------- */
+  .footer-note{
+    text-align:center;
+    font-size:12px;
+    color:var(--grey);
+    padding:0 20px clamp(28px,4vw,40px);
+    border-top:1px solid var(--grey-light);
+    margin:0 clamp(20px,5vw,56px);
+    padding-top:20px;
+  }
+</style>
 </head>
 <body>
 
@@ -50,7 +630,7 @@
         Riviera Maya · Quintana Roo
       </div>
       <h1>Terrenos<br>en <em>venta</em></h1>
-      <p class="hero-sub">La mejor inversión sigue siendo la tierra, aprovecha las oportunidades disponibles hoy y asegura tu patrimonio para el mañana.</p>
+      <p class="hero-sub">Tu llave a la Riviera Maya. Lotes listos para escriturar, a minutos de la costa, con entrega inmediata.</p>
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="n">700 m²</div>
@@ -68,7 +648,7 @@
     </div>
 
     <div class="hero-art">
-      <img src="img/playa-hero.jpg" alt="Terreno frente al mar, Riviera Maya" class="hero-photo" loading="lazy" onerror="this.style.display='none'">
+      <img src="img/playa-hero.jpg" alt="Terreno frente al mar, Riviera Maya" class="hero-photo" onerror="this.style.display='none'">
       <svg viewBox="0 0 480 410" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <rect width="480" height="410" fill="#DFF3E9"/>
         <rect width="480" height="230" fill="#BFE8E5"/>
@@ -96,7 +676,7 @@
         </g>
       </svg>
       <div class="save-pill">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="#1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg>
       </div>
       <div class="float-badge">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#12A5A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -181,7 +761,7 @@
 
         <div class="tier-row">
           <div class="tier-size">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="r[...]"/></svg></div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div>
               <div class="m2">5,000 m²</div>
               <div class="use">Para desarrolladores e inversionistas</div>
@@ -194,7 +774,7 @@
 
         <div class="tier-row">
           <div class="tier-size">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V6l8-3 8 3v15M9 21v-8h6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="r[...]"/></svg></div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V6l8-3 8 3v15M9 21v-8h6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div>
               <div class="m2">10,000 m²</div>
               <div class="use">Proyectos de gran escala</div>
@@ -216,8 +796,121 @@
     </div>
   </div>
 
+  <div class="listings-title">Terrenos disponibles</div>
+  <div class="listings-sub">Selección de lotes listos para escriturar en distintas ubicaciones de la Riviera Maya</div>
+
+  <div class="listings-grid">
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-1.jpg" alt="Terreno en Tulum, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Tulum <span class="size">700 m²</span></div>
+        <div class="desc">A 10 min de la zona hotelera</div>
+        <div class="price">$250,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-2.jpg" alt="Terreno en Playa del Carmen, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Playa del Carmen <span class="size">700 m²</span></div>
+        <div class="desc">Cerca de la Quinta Avenida</div>
+        <div class="price">$380,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-3.jpg" alt="Terreno en Puerto Aventuras, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Puerto Aventuras <span class="size">700 m²</span></div>
+        <div class="desc">Vista a zona de marina</div>
+        <div class="price">$420,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-4.jpg" alt="Terreno en Akumal, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Akumal <span class="size">700 m²</span></div>
+        <div class="desc">A pasos de la playa</div>
+        <div class="price">$500,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-5.jpg" alt="Terreno en Bacalar, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Bacalar <span class="size">700 m²</span></div>
+        <div class="desc">Vista a la Laguna de los Siete Colores</div>
+        <div class="price">$300,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+    <div class="listing-item">
+      <div class="listing-photo">
+        <img src="img/terreno-6.jpg" alt="Terreno en Mahahual, Quintana Roo" onerror="this.style.display='none'">
+        <div class="badge">Disponible</div>
+        <div class="heart"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.5 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z" stroke="#222" stroke-width="1.6"/></svg></div>
+      </div>
+      <div class="listing-item-body">
+        <div class="loc">Mahahual <span class="size">700 m²</span></div>
+        <div class="desc">Frente al Caribe mexicano</div>
+        <div class="price">$700,000 <span>MXN</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hosts-title">Más información</div>
+  <div class="hosts">
+    <div class="host-card">
+      <div class="avatar">MA</div>
+      <div class="host-info">
+        <div class="city">CDMX</div>
+        <div class="name">Miriam Aguirre Álvarez</div>
+        <a class="phone-btn" href="tel:+525621645777">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z" stroke="#fff" stroke-width="1.6"/></svg>
+          56 2164 5777
+        </a>
+      </div>
+    </div>
+    <div class="host-card">
+      <div class="avatar">HM</div>
+      <div class="host-info">
+        <div class="city">Playa del Carmen</div>
+        <div class="name">Horacio Muñoz Ramírez</div>
+        <a class="phone-btn" href="tel:+529982683967">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z" stroke="#fff" stroke-width="1.6"/></svg>
+          998 268 3967
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">Precios sujetos a cambio sin previo aviso · Consulta disponibilidad de lotes</div>
+
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
+
