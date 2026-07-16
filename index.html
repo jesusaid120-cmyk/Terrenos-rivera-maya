@@ -194,6 +194,7 @@
     z-index:1;
     cursor:grab;
     touch-action:pan-y;
+    background:var(--ocean);
   }
   .hero-carousel.dragging{ cursor:grabbing; }
   .hero-carousel .slide{
@@ -207,6 +208,8 @@
     -webkit-user-drag:none;
     user-select:none;
     pointer-events:none;
+    color:transparent;
+    font-size:0;
   }
   .hero-carousel .slide.active{ opacity:1; }
 
@@ -842,6 +845,132 @@
     font-weight:700;
   }
 
+  /* ---------- COMPARATIVA ---------- */
+  .compare-wrap{
+    padding:0 clamp(20px,5vw,56px) clamp(28px,4vw,40px);
+  }
+  .compare-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(19px,3vw,24px);
+    margin-bottom:6px;
+  }
+  .compare-sub{
+    font-size:14px;
+    color:var(--grey);
+    margin-bottom:20px;
+    max-width:60ch;
+  }
+
+  .compare-headline{
+    background:linear-gradient(135deg, var(--ocean), var(--turquoise));
+    color:#fff;
+    border-radius:var(--radius-lg);
+    padding:clamp(22px,4vw,32px);
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .compare-headline .big{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:clamp(34px,6vw,52px);
+    line-height:1;
+  }
+  .compare-headline .small{
+    font-size:clamp(13.5px,2vw,15.5px);
+    color:#DFF6F1;
+    margin-top:8px;
+    max-width:46ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .compare-table{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    border:1px solid var(--grey-light);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+
+  .compare-table > div{
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    font-size:clamp(13px,1.9vw,14.5px);
+  }
+
+  .compare-head{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    justify-content:center;
+    text-align:center;
+  }
+  .compare-head.us{
+    background:var(--ink);
+    color:#fff;
+    flex-direction:column;
+    gap:2px;
+  }
+  .compare-head.us .tag{
+    font-size:10px;
+    font-weight:600;
+    color:#FFC8D3;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  .compare-head.them{
+    background:var(--offwhite);
+    color:var(--grey);
+    flex-direction:column;
+    gap:2px;
+  }
+  .compare-head.them .tag{
+    font-size:10px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--grey);
+  }
+  .compare-head.label{ background:transparent; }
+
+  .compare-row-label{
+    font-weight:600;
+    color:var(--ink);
+    background:var(--white);
+    border-top:1px solid var(--grey-light);
+  }
+  .compare-us{
+    justify-content:center;
+    text-align:center;
+    font-weight:700;
+    color:var(--turquoise);
+    background:var(--sand);
+    border-top:1px solid var(--grey-light);
+  }
+  .compare-them{
+    justify-content:center;
+    text-align:center;
+    color:var(--grey);
+    background:var(--white);
+    border-top:1px solid var(--grey-light);
+    text-decoration:line-through;
+    text-decoration-color:rgba(113,128,150,0.5);
+  }
+
+  .compare-note{
+    font-size:12px;
+    color:var(--grey);
+    margin-top:12px;
+    text-align:center;
+  }
+
+  @media (max-width:560px){
+    .compare-table{ grid-template-columns:1fr 0.85fr 0.85fr; }
+    .compare-table > div{ padding:12px 8px; font-size:12.5px; }
+  }
+
+
   /* ---------- LOTES / PLANOS ---------- */
   .lotes-wrap{
     padding:0 clamp(20px,5vw,56px) clamp(20px,4vw,32px);
@@ -1439,6 +1568,44 @@
         <p>Si eres lo suficientemente inteligente y sabes de inversiones, <span class="accent">contáctanos sin costo ni compromiso</span> y compara estos precios con los terrenos de Mahahual.</p>
       </div>
     </div>
+  </div>
+
+  <div class="compare-wrap">
+    <div class="compare-title">Comparados con Mahahual</div>
+    <div class="compare-sub">Mismo destino, mejor inversión. Así se ve nuestro precio por m² contra el de Terrenos Grand Mayahual.</div>
+
+    <div class="compare-headline">
+      <div class="big">82.7% menos</div>
+      <div class="small">Nuestro precio por m² es 82.7% más bajo que el de Grand Mayahual — pagas menos por más terreno.</div>
+    </div>
+
+    <div class="compare-table">
+      <div class="compare-head label"></div>
+      <div class="compare-head us"><span class="tag">Nosotros</span>Grand San Josesito</div>
+      <div class="compare-head them"><span class="tag">Competencia</span>Grand Mayahual</div>
+
+      <div class="compare-row-label">Superficie</div>
+      <div class="compare-us">700 m²</div>
+      <div class="compare-them">180 m²</div>
+
+      <div class="compare-row-label">Precio de lista</div>
+      <div class="compare-us">$600,000 MXN</div>
+      <div class="compare-them">$891,000 MXN</div>
+
+      <div class="compare-row-label">Precio por m²</div>
+      <div class="compare-us">$857.14 MXN</div>
+      <div class="compare-them">$4,950.00 MXN</div>
+
+      <div class="compare-row-label">Enganche</div>
+      <div class="compare-us">10%</div>
+      <div class="compare-them">15%</div>
+
+      <div class="compare-row-label">Meses sin intereses</div>
+      <div class="compare-us">12 a 24</div>
+      <div class="compare-them">60</div>
+    </div>
+
+    <div class="compare-note">Precio por m² calculado a partir del precio de lista ÷ superficie de cada cotización. Datos de la competencia tomados de su cotizador oficial (26/1/2026).</div>
   </div>
 
   <div class="lotes-wrap">
