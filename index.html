@@ -455,15 +455,22 @@
     position:absolute; right:0; top:0; height:100%; opacity:.5;
   }
 
-  /* ---------- VIDEO SECTION ---------- */
+ /* ---------- VIDEO SECTION ---------- */
   .video-section{
     margin:clamp(28px,4vw,40px) clamp(20px,5vw,56px) 0;
     position:relative;
     border-radius:var(--radius-lg);
     overflow:hidden;
-    aspect-ratio:16/8;
+    aspect-ratio:16/8; /* Excelente proporción en PC */
     background:linear-gradient(135deg, var(--ocean), var(--jade, #1F5C4E) 55%, var(--turquoise));
     box-shadow:var(--shadow-card);
+  }
+
+  /* Ajuste responsivo para móviles sin romper el diseño */
+  @media (max-width: 640px) {
+    .video-section {
+      aspect-ratio: 4/5; /* Da más espacio vertical para que quepa el texto y se aprecie el video */
+    }
   }
 
   .video-section.no-video video{ display:none; }
@@ -472,7 +479,7 @@
     position:absolute;
     top:50%; left:50%;
     transform:translate(-50%,-50%);
-    z-index:2;
+    z-index:10; /* Se subió de 2 a 10 para que el texto nunca lo tape en móviles */
     width:64px; height:64px;
     border-radius:50%;
     background:rgba(0,0,0,0.45);
@@ -496,11 +503,11 @@
   .video-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(180deg, rgba(11,79,108,0.15) 0%, rgba(11,79,108,0.72) 100%);
+    background:linear-gradient(180deg, rgba(11,79,108,0.1) 0%, rgba(11,79,108,0.85) 100%); /* Gradiente un poco más oscuro abajo para asegurar legibilidad */
     z-index:1;
     display:flex;
     align-items:flex-end;
-    padding:clamp(22px,4vw,40px);
+    padding:clamp(16px,4vw,40px); /* Padding ligeramente reducido en móvil para dar aire */
   }
 
   .video-badge{
@@ -521,18 +528,19 @@
 
   .video-text{
     max-width:56ch;
+    z-index:2; /* Asegura que el texto esté sobre el overlay */
   }
   .video-text h3{
     font-family:'Poppins', sans-serif;
     font-weight:700;
-    font-size:clamp(19px,3.4vw,28px);
+    font-size:clamp(15px,3.4vw,28px); /* Bajó levemente el tamaño mínimo de 19px a 15px para pantallas muy chicas */
     color:#fff;
-    line-height:1.3;
+    line-height:1.35;
   }
   .video-text .stats-mini{
     display:flex;
-    gap:clamp(16px,3vw,28px);
-    margin-top:14px;
+    gap:clamp(12px,3vw,28px);
+    margin-top:12px;
     flex-wrap:wrap;
   }
   .video-text .stat-mini{
@@ -540,11 +548,11 @@
     align-items:center;
     gap:8px;
     color:#fff;
-    font-size:13px;
+    font-size:12px; /* Un punto más pequeño en móvil para evitar saltos de línea raros */
     font-weight:600;
   }
-  .video-text .stat-mini svg{ width:18px; height:18px; color:#9FE6DD; flex:none; }
-
+  .video-text .stat-mini svg{ width:16px; height:16px; color:#9FE6DD; flex:none; }
+  
   /* ---------- LISTINGS GRID ---------- */
   .listings-title{
     font-family:'Poppins', sans-serif;
