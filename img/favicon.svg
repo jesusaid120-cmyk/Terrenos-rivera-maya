@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="40" fill="#0f2537"/>
+  <circle cx="100" cy="90" r="75" stroke="url(#g)" stroke-width="4" stroke-dasharray="240 80" transform="rotate(-45 100 90)"/>
+  <path d="M60 100 L100 65 L140 100" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 100 V115 H125 V100" stroke="url(#g)" stroke-width="3"/>
+  <rect x="94" y="80" width="12" height="12" stroke="url(#g)" stroke-width="2"/>
+  <path d="M35 125 C 70 120, 110 145, 165 125" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M45 145 C 85 135, 120 160, 155 140" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 165 C 95 155, 115 170, 140 160" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M145 125 V100 M145 112 L155 105 M145 107 L137 100" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="g" x1="35" y1="65" x2="165" y2="165" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e5c77b"/>
+      <stop offset="50%" stop-color="#c4a45c"/>
+      <stop offset="100%" stop-color="#9a7b3c"/>
+    </linearGradient>
+  </defs>
+</svg>
