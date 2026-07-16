@@ -808,6 +808,111 @@
     font-weight:700;
   }
 
+  /* ---------- LOTES / PLANOS ---------- */
+  .lotes-wrap{
+    padding:0 clamp(20px,5vw,56px) clamp(20px,4vw,32px);
+  }
+
+  .lotes-card{
+    border:1px solid var(--grey-light);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+  }
+
+  @media (max-width:760px){
+    .lotes-card{ grid-template-columns:1fr; }
+  }
+
+  .lotes-text{
+    padding:clamp(22px,4vw,34px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:14px;
+  }
+
+  .lotes-text h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:clamp(19px,2.8vw,23px);
+    color:var(--ink);
+  }
+
+  .lotes-sizes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .lotes-sizes span{
+    background:var(--offwhite);
+    border:1px solid var(--grey-light);
+    color:var(--ink);
+    font-weight:600;
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:999px;
+  }
+
+  .lotes-sizes span.active{
+    background:var(--sand);
+    border-color:var(--coral);
+    color:var(--coral-dark);
+  }
+
+  .lotes-text p{
+    font-size:clamp(14.5px,2.1vw,16px);
+    line-height:1.6;
+    color:var(--grey);
+  }
+
+  .lotes-text .price-tag{
+    display:inline-flex;
+    align-items:baseline;
+    gap:6px;
+    background:var(--ink);
+    color:#fff;
+    width:fit-content;
+    padding:10px 18px;
+    border-radius:999px;
+    font-family:'Poppins', sans-serif;
+  }
+  .lotes-text .price-tag .amount{
+    font-weight:700;
+    font-size:clamp(18px,2.6vw,22px);
+  }
+  .lotes-text .price-tag .unit{
+    font-size:12px;
+    color:#D8D8D8;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+
+  .lotes-text .highlight{
+    color:var(--turquoise);
+    font-weight:700;
+  }
+
+  .lotes-image{
+    background:var(--sand);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(14px,2.5vw,20px);
+  }
+
+  .lotes-image img{
+    width:100%;
+    height:100%;
+    max-height:clamp(320px,48vw,460px);
+    object-fit:contain;
+    border-radius:var(--radius-md);
+    display:block;
+  }
+
   .hosts-title{
     text-align:left;
     font-family:'Poppins', sans-serif;
@@ -1296,6 +1401,29 @@
 
       <div class="cotizador-cta">
         <p>Si eres lo suficientemente inteligente y sabes de inversiones, <span class="accent">contáctanos sin costo ni compromiso</span> y compara estos precios con los terrenos de Mahahual.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lotes-wrap">
+    <div class="lotes-card">
+      <div class="lotes-text">
+        <h3>Tamaños de lote disponibles</h3>
+        <div class="lotes-sizes">
+          <span>500 m²</span>
+          <span>700 m²</span>
+          <span>800 m²</span>
+          <span class="active">1000 m²</span>
+        </div>
+        <p>Contamos con lotes de 700 m², 1000 m², 800 m² y 500 m². Por el momento, los lotes de <b>1000 m²</b> los tenemos en:</p>
+        <div class="price-tag">
+          <span class="amount">$350,000</span>
+          <span class="unit">MXN</span>
+        </div>
+        <p>Disponible solo para quienes deseen un <span class="highlight">patrimonio familiar</span>, ubicados a 5 min del mar Caribe.</p>
+      </div>
+      <div class="lotes-image">
+        <img src="img/planos-lote-el-pantera.jpg" alt="Plano de lotes — Parcelas 1, 2 y 3 con lotes de 1000 m²">
       </div>
     </div>
   </div>
